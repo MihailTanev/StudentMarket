@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\StudentWebMarketDbContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
@@ -69,6 +70,20 @@
       <Project>{954daba2-f592-403f-b6c9-dc4e7f5c834a}</Project>
       <Name>StudentWebMarket.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Migrations\Images\aspnet.jpg" />
+    <Content Include="Migrations\Images\asus-latest.jpg" />
+    <Content Include="Migrations\Images\asus-memo.jpg" />
+    <Content Include="Migrations\Images\dell-inspiron.jpg" />
+    <Content Include="Migrations\Images\Digital_0053_US.jpg" />
+    <Content Include="Migrations\Images\hp-pavilion.jpg" />
+    <Content Include="Migrations\Images\htc-desire.jpg" />
+    <Content Include="Migrations\Images\java.jpg" />
+    <Content Include="Migrations\Images\noImg.png" />
+    <Content Include="Migrations\Images\nokia-lumia.jpg" />
+    <Content Include="Migrations\Images\profileimage.jpg" />
+    <Content Include="Migrations\Images\samsung-galaxy.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
