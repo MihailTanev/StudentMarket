@@ -61,7 +61,7 @@ namespace StudentWebMarket.Data.Migrations
                 var image = new Image
                 {
                     Content = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "../StudentWebMarket.Data/Migrations/Images/samsung-galaxy.jpg")),
+                    "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/samsung-galaxy.jpg")),
                     FileExtension = "jpg"
                 };
                 product1.Image = image;
@@ -93,7 +93,7 @@ namespace StudentWebMarket.Data.Migrations
                 var image2 = new Image
                 {
                     Content = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "../StudentWebMarket.Data/Migrations/Images/asus-memo.jpg")),
+                    "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/asus-memo.jpg")),
                     FileExtension = "jpg"
                 };
                 product2.Category = category;
@@ -115,7 +115,7 @@ namespace StudentWebMarket.Data.Migrations
                 var image3 = new Image
                 {
                     Content = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "../StudentWebMarket.Data/Migrations/Images/hp-pavilion.jpg")),
+                    "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/hp-pavilion.jpg")),
                     FileExtension = "jpg"
                 };
                 product3.Image = image3;
@@ -146,7 +146,7 @@ namespace StudentWebMarket.Data.Migrations
                 var image4 = new Image
                 {
                     Content = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "../StudentWebMarket.Data/Migrations/Images/dell-inspiron.jpg")),
+                    "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/dell-inspiron.jpg")),
                     FileExtension = "jpg"
                 };
                 product4.Image = image4;
@@ -167,7 +167,7 @@ namespace StudentWebMarket.Data.Migrations
                 var image5 = new Image
                 {
                     Content = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "../StudentWebMarket.Data/Migrations/Images/htc-desire.jpg")),
+                    "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/htc-desire.jpg")),
                     FileExtension = "jpg"
                 };
                 product5.Image = image5;
@@ -199,7 +199,7 @@ namespace StudentWebMarket.Data.Migrations
                 var image6 = new Image
                 {
                     Content = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "../StudentWebMarket.Data/Migrations/Images/nokia-lumia.jpg")),
+                    "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/nokia-lumia.jpg")),
                     FileExtension = "jpg"
                 };
 
@@ -225,7 +225,7 @@ namespace StudentWebMarket.Data.Migrations
                 var image7 = new Image
                 {
                     Content = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "../StudentWebMarket.Data/Migrations/Images/java.jpg")),
+                    "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/java.jpg")),
                     FileExtension = "jpg"
                 };
                 product7.Image = image7;
@@ -246,7 +246,7 @@ namespace StudentWebMarket.Data.Migrations
                 var image8 = new Image
                 {
                     Content = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "../StudentWebMarket.Data/Migrations/Images/aspnet.jpg")),
+                    "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/aspnet.jpg")),
                     FileExtension = "jpg"
                 };
                 product8.Image = image8;

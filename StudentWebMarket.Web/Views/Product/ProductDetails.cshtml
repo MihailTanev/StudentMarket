@@ -1,0 +1,94 @@
+﻿@model StudentWebMarket.Web.ViewModels.ProductDetailsViewModel
+@{
+    ViewBag.Title = "Product Details";
+}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="page-header">
+            @Model.Name <small>$@Model.SalePrice</small>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-3">
+                <img width="200" height="250" src="@Url.Action("Image", "Home", new { id = Model.ImageId})" class="center-block img-responsive" />
+            </div>
+            <div class='col-md-5'>
+                <h4 class="">Description:</h4>
+                <div class="row">
+                    <div class="col-md-3">Name:</div>
+                    <div class="col-md-6">@Model.Name</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Category:</div>
+                    <div class="col-md-6">@Model.CategoryName</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Original Price:</div>
+                    <div class="col-md-6">$@Model.OriginalPrice</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">You Save:</div>
+                    <div class="col-md-6">$@(Model.OriginalPrice - Model.SalePrice)</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Discount:</div>
+                    <div class="col-md-6">@((1 - (Model.SalePrice / Model.OriginalPrice)).ToString("0.00%"))</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Condition:</div>
+                    <div class="col-md-6">@Model.Condition</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Year:</div>
+                    <div class="col-md-6">@Model.Year</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Description:</div>
+                    <div class="col-md-6">@Model.Description</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Created On:</div>
+                    <div class="col-md-6"><i class="fa fa-clock-o" style="color:#337ab7"></i> @Model.CreatedOn.ToString("dd MMMM yyyy, HH:mm")</div>
+                </div>
+            </div>
+
+            <div class="col-md-3" id="contact-info">
+                <h4 class="">Contact Information:</h4>
+                @*<div class='row'>
+                    <img src="data:image;base64,@System.Convert.ToBase64String(Model.UserPhoto)"
+                         class="center-block img-responsive" id="profilepic" />
+                </div>*@
+                <div class='row'>
+                    <div class="col-md-6">@Model.SellerFirstName @Model.SellerLastName</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><a href="mailto:@Model.SellerEmail">@Model.SellerEmail</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">@Model.SellerPhone</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">User Since:@Model.RegistrationDate.Value.ToString("MMMM / yyyy")</div>
+                </div>
+                <div class='row'>
+                    <p class="text-center"><a href="#" class="btn btn-primary btn-sm" id="btnAd">Write a message</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='panel-footer'>
+        <a class='btn btn-default' href="@Url.Action("Index","Home")" style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("Admin"))
+            {
+                <a class='btn btn-danger' href="@Url.Action("Delete", "Product", new { id = Model.ProductId })" style='width:80px'>
+                    Delete
+                </a>
+            }
+        }
+    </div>
+</div>

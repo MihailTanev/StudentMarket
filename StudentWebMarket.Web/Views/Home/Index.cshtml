@@ -1,31 +1,96 @@
-﻿@{
+﻿@model IEnumerable<StudentWebMarket.Web.ViewModels.ProductViewModel>
+@{
     ViewBag.Title = "Home Page";
-}
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+}
+<div class="row">
+    <div class="jumbotron" id="image-background">
+        <h1 class="text-center form-group" id="title-color"><strong>Student Market</strong></h1>
+        @using (Html.BeginForm("Search", "SearchProduct", FormMethod.Post))
+        {
+            <div class="flex-container">
+                <div class="row">
+                    <div class="flex-item">
+                        <div class="flex-item-group">
+                            @Html.TextBox("SearchString", null, new { @class = "form-control input-lg", placeholder = "Search...", id = "searchfield" })
+                            <button class="btn btn-primary btn-lg" id="searchbutton"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        &nbsp;
+        <p class="text-center"><a href="@Url.Action("Create","Product")" class="btn btn-primary btn-lg" id="btnAd">Create Ad</a></p>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">
+        <h2 class="page-header text-center">
+            Share Your Education Expenses
+        </h2>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/Content/Images/book-clutter-desk-73988.jpg" class="img-responsive" />
+            </div>
+            <div>
+                <i style="font-size:16px;">
+                    At the end of the semester, there may be a few school books that you would like
+                    to keep and revisit, but there are also probably plenty that you would like to
+                    say goodbye to. Instead of going to the local campus bookstore to sell textbooks,
+                    there are many benefits that come with selling books online.<br><br /> Selling textbooks online has become a faster and simpler
+                    process than before. You do not necessarily have to be the one to find and communicate with buyers. There are companies
+                    willing to give you cash for your used textbooks online, and you do not even have to pay for the shipping.
+                    If you accept the quote for your books, you simply send in your books and receive the cash you need.<br><br /> It is not unusual to try to
+                    sell college textbooks and get offered roughly 10 to 20 percent of what you originally paid. It can feel awful to be offered 10
+                    dollars for a book that cost you over 100 dollars. You can get around this college textbook buyback problem by going online,
+                    instead.It is not unusual to try to
+                    sell college textbooks and get offered roughly 10 to 20 percent of what you originally paid. It can feel awful to be offered 10
+                    dollars for a book that cost you over 100 dollars. You can get around this college textbook buyback problem by going online,
+                    instead.If you accept the quote for your books, you simply send in your books and receive the cash you need.<br><br /> It is not unusual to try to
+                    sell college textbooks and get offered roughly 10 to 20 percent of what you originally paid. It can feel awful to be offered 10
+                    dollars for a book that cost you over 100 dollars. You can get around this college textbook buyback problem by going online,
+                    instead.It is not unusual to try to
+                    sell college textbooks and get offered roughly 10 to 20 percent of what you originally paid. It can feel awful to be offered 10
+                    dollars for a book that cost you over 100 dollars. You can get around this college textbook buyback problem by going online,
+                    instead.
+                </i>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="page-header text-center">
+                Recent Ads
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                @foreach (var product in Model.Take(6))
+                {
+                    <div class="col-sm-4 col-md-4 col-md-4">
+                        <div class="thumbnail">
+                            @if (!product.ImageId.Equals(null))
+                            {
+                                <img src="@Url.Action("Image", "Home", new { id = product.ImageId })" class="img-responsive" />
+                            }
+                            <div class="caption">
+                                <h5 class="pull-right text-danger">$@product.Price</h5>
+                                <h4>
+                                    <a href="@Url.Action("ProductDetails","Product",new { product.Id})">@product.Product</a>
+                                </h4>
+                                <p>Created On : @product.CreatedOn.ToString("dd MMMM yyyy, HH:mm")</p>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                }
+            </div>
+        </div>
     </div>
 </div>

@@ -54,15 +54,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\StudentWebMarketDbContext.cs" />
+    <Compile Include="Migrations\201805010823416_init.cs" />
+    <Compile Include="Migrations\201805010823416_init.Designer.cs">
+      <DependentUpon>201805010823416_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\ICategoryRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="UnitOfWork\IStudentWebMarketData.cs" />
     <Compile Include="UnitOfWork\StudentWebMarketData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\StudentWebMarket.Data.dll.config" />
+    <None Include="bin\Debug\StudentWebMarket.Models.dll.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +80,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="bin\Debug\StudentWebMarket.Data.dll" />
+    <Content Include="bin\Debug\StudentWebMarket.Data.pdb" />
+    <Content Include="bin\Debug\StudentWebMarket.Models.dll" />
+    <Content Include="bin\Debug\StudentWebMarket.Models.pdb" />
     <Content Include="Migrations\Images\aspnet.jpg" />
     <Content Include="Migrations\Images\asus-latest.jpg" />
     <Content Include="Migrations\Images\asus-memo.jpg" />
@@ -84,6 +104,14 @@
     <Content Include="Migrations\Images\nokia-lumia.jpg" />
     <Content Include="Migrations\Images\profileimage.jpg" />
     <Content Include="Migrations\Images\samsung-galaxy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805010823416_init.resx">
+      <DependentUpon>201805010823416_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
