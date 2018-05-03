@@ -1,0 +1,14 @@
+﻿@using StudentWebMarket.Data.Repositories
+@{
+    ICategoryRepository categoryRepository = new CategoryRepository();
+
+}
+<div id="categorymenu">
+    <ul>
+        @foreach (var category in categoryRepository.FindAll())
+        {
+
+            <li><a href="@Url.Action("ProductsByCategory","Home",new {id=category.CategoryId})">@category.Name</a></li>
+        }
+    </ul>
+</div>

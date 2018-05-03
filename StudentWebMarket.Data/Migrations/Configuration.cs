@@ -35,7 +35,7 @@ namespace StudentWebMarket.Data.Migrations
                 UserName = "testUser",
                 PhoneNumber = "12 345 678",
                 //UserPhoto = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                //    "@../StudentMarket.Data/Migrations/Images/profileimage.jpg")),
+                //"C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/profileimage.jpg")),
                 RegistrationDate = new DateTime(2015, 1, 10)
             };
 

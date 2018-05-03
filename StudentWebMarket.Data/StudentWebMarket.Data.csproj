@@ -54,9 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\StudentWebMarketDbContext.cs" />
-    <Compile Include="Migrations\201805010823416_init.cs" />
-    <Compile Include="Migrations\201805010823416_init.Designer.cs">
-      <DependentUpon>201805010823416_init.cs</DependentUpon>
+    <Compile Include="Migrations\201805021712596_initial.cs" />
+    <Compile Include="Migrations\201805021712596_initial.Designer.cs">
+      <DependentUpon>201805021712596_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,8 +109,8 @@
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805010823416_init.resx">
-      <DependentUpon>201805010823416_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805021712596_initial.resx">
+      <DependentUpon>201805021712596_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

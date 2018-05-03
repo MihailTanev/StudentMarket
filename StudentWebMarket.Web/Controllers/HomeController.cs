@@ -1,6 +1,10 @@
-﻿using StudentWebMarket.Web.ViewModels;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using StudentWebMarket.Data.EF;
+using StudentWebMarket.Web.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,5 +42,51 @@ namespace StudentWebMarket.Web.Controllers
             return File(image.Content, "image/" + image.FileExtension);
         }
 
+        public ActionResult ProductsByCategory(int id)
+        {
+            var model = this.db.Categories.GetById(id).Products.ToList();
+            return PartialView("_ProductPartial", model.ToList()
+                .OrderByDescending(x => x.CreatedOn));
+        }
+
+        public FileContentResult UserPhotos()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity.GetUserId();
+
+                if (user == null)
+                {
+                    string fileName = HttpContext.Server.MapPath(@"..StudentWebMarket.Data/Migrations/Images/noImg.png");
+
+                    byte[] imageData = null;
+                    FileInfo fileInfo = new FileInfo(fileName);
+                    long imageFileLength = fileInfo.Length;
+                    FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    imageData = br.ReadBytes((int)imageFileLength);
+
+                    return File(imageData, "image/png");
+
+                }
+                // to get the user details to load user Image
+                var dbUsers = HttpContext.GetOwinContext().Get<StudentWebMarketDbContext>();
+                var userImage = dbUsers.Users.Where(x => x.Id == user).FirstOrDefault();
+
+                return new FileContentResult(userImage.UserPhoto, "image/jpeg");
+            }
+            else
+            {
+                string fileName = HttpContext.Server.MapPath(@"..StudentWebMarket.Data/Migrations/Images/noImg.png");
+
+                byte[] imageData = null;
+                FileInfo fileInfo = new FileInfo(fileName);
+                long imageFileLength = fileInfo.Length;
+                FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                imageData = br.ReadBytes((int)imageFileLength);
+                return File(imageData, "image/png");
+            }
+        }
     }
 }

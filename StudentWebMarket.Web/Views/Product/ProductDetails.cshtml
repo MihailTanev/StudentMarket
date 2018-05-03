@@ -5,7 +5,7 @@
 <div class="panel panel-info">
     <div class="panel-heading">
         <h3 class="page-header">
-            @Model.Name <small>$@Model.SalePrice</small>
+            @Model.Name <small>@Model.SalePrice kr</small>
         </h3>
     </div>
     <div class="panel-body">
@@ -25,11 +25,11 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">Original Price:</div>
-                    <div class="col-md-6">$@Model.OriginalPrice</div>
+                    <div class="col-md-6">@Model.OriginalPrice kr</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">You Save:</div>
-                    <div class="col-md-6">$@(Model.OriginalPrice - Model.SalePrice)</div>
+                    <div class="col-md-6">@(Model.OriginalPrice - Model.SalePrice) kr</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Discount:</div>
@@ -55,10 +55,10 @@
 
             <div class="col-md-3" id="contact-info">
                 <h4 class="">Contact Information:</h4>
-                @*<div class='row'>
+                <div class='row'>
                     <img src="data:image;base64,@System.Convert.ToBase64String(Model.UserPhoto)"
-                         class="center-block img-responsive" id="profilepic" />
-                </div>*@
+                     class="center-block img-responsive" id="profilepic" />
+                </div>
                 <div class='row'>
                     <div class="col-md-6">@Model.SellerFirstName @Model.SellerLastName</div>
                 </div>

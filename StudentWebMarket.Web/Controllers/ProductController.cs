@@ -1,15 +1,12 @@
 ﻿using StudentWebMarket.Web.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace StudentWebMarket.Web.Controllers
 {
     public class ProductController : BaseController
     {
-       public ActionResult ProductDetails(int? id)
+        public ActionResult ProductDetails(int? id)
         {
             var model = this.db.Products.All().Where(g => g.ProductId == id)
                 .Select(g => new ProductDetailsViewModel
@@ -21,7 +18,7 @@ namespace StudentWebMarket.Web.Controllers
                     CreatedOn = g.CreatedOn,
                     RegistrationDate = g.Seller.RegistrationDate,
                     Name = g.Name,
-                    //UserPhoto=g.Seller.UserPhoto,
+                    UserPhoto=g.Seller.UserPhoto,
                     Condition = g.Condition.Name,
                     CategoryName = g.Category.Name,
                     ImageId = g.Image.ImageId,

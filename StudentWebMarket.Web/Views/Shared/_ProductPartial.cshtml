@@ -1,0 +1,101 @@
+﻿@model IEnumerable<StudentWebMarket.Models.Models.Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Products";
+
+}
+
+<div class="panel panel-info">
+    @foreach (var product in Model)
+    {
+        <div class="panel-heading">
+            <h3 class="page-header">
+                @product.Name <small>@product.SalePrice kr</small>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class='row'>
+                <div class="col-md-3">
+                    <img width="200" height="250" src="@Url.Action("Image", "Home", new { id = product.ImageId })" class="center-block img-responsive" />
+                </div>
+                <div class='col-md-5'>
+                    <h4 class="">Description:</h4>
+                    <div class='row'>
+                        <div class='col-md-3'>Name:</div>
+                        <div class='col-md-6'>@product.Name</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Category:</div>
+                        <div class='col-md-6'>@product.Category.Name</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Original Price:</div>
+                        <div class='col-md-6'>@product.OriginalPrice kr</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>You Save:</div>
+                        <div class='col-md-6'>@(product.OriginalPrice - product.SalePrice) kr</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Discount:</div>
+                        <div class='col-md-6'>@((1 - (product.SalePrice / product.OriginalPrice)).ToString("0.00%"))</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Condition:</div>
+                        <div class='col-md-6'>@product.Condition.Name</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Year:</div>
+                        <div class='col-md-6'>@product.Year</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Description:</div>
+                        <div class='col-md-6'>@product.Description</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Created On:</div>
+                        <div class='col-md-6'><i class="fa fa-clock-o" style="color:#337ab7"></i> @product.CreatedOn.ToString("dd MMMM yyyy, mm:hh")</div>
+                    </div>
+                </div>
+                <div class='col-md-3' id="contact-info">
+                    <h4 class="">Contact Information:</h4>
+                    <div class='row'>
+                        <img src="data:image;base64,@System.Convert.ToBase64String(product.Seller.UserPhoto)"
+                             class="center-block img-responsive" id="profilepic" />
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-6'>@product.Seller.FirstName @product.Seller.LastName</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-6'><a href="mailto:@product.Seller.Email">@product.Seller.Email</a></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-6'>@product.Seller.PhoneNumber</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-8'>User Since: @product.Seller.RegistrationDate.Value.ToString("MMMM / yyyy")</div>
+                    </div>
+                    <div class='row'>
+                        <p class="text-center"><a href="#" class="btn btn-primary btn-sm" id="btnAd">Write a message</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='panel-footer'>
+            <a class='btn btn-default' href="@Url.Action("Index", "Home")" style='width:80px'>
+                <i class='glyphicon glyphicon-chevron-left'></i> Back
+            </a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
+                    <a class='btn btn-danger' href="@Url.Action("Delete", "Product", new { id = product.ProductId })" style='width:80px'>
+                        Delete
+                    </a>
+                }
+            }
+        </div>
+    }
+</div>
+
