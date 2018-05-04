@@ -13,6 +13,7 @@ namespace StudentWebMarket.Models.Models
 
         public int ProductId { get; set; }
 
+        [MaxLength(50)]
         public string Name { get; set; }
 
         public decimal OriginalPrice { get; set; }

@@ -1,0 +1,2 @@
+﻿ALTER TABLE dbo.AspNetUsers ADD CONSTRAINT U_UserName UNIQUE(UserName)
+ALTER TABLE dbo.AspNetUsers ADD CONSTRAINT U_Email UNIQUE(Email)

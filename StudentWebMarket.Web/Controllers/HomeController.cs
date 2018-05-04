@@ -57,7 +57,7 @@ namespace StudentWebMarket.Web.Controllers
 
                 if (user == null)
                 {
-                    string fileName = HttpContext.Server.MapPath(@"..StudentWebMarket.Data/Migrations/Images/noImg.png");
+                    string fileName = HttpContext.Server.MapPath("C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/java.jpg");
 
                     byte[] imageData = null;
                     FileInfo fileInfo = new FileInfo(fileName);
@@ -66,18 +66,18 @@ namespace StudentWebMarket.Web.Controllers
                     BinaryReader br = new BinaryReader(fs);
                     imageData = br.ReadBytes((int)imageFileLength);
 
-                    return File(imageData, "image/png");
+                    return File(imageData, "image/jpg");
 
                 }
                 // to get the user details to load user Image
                 var dbUsers = HttpContext.GetOwinContext().Get<StudentWebMarketDbContext>();
                 var userImage = dbUsers.Users.Where(x => x.Id == user).FirstOrDefault();
 
-                return new FileContentResult(userImage.UserPhoto, "image/jpeg");
+                return new FileContentResult(userImage.UserPhoto, "image/jpg");
             }
             else
             {
-                string fileName = HttpContext.Server.MapPath(@"..StudentWebMarket.Data/Migrations/Images/noImg.png");
+                string fileName = HttpContext.Server.MapPath("C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/java.jpg");
 
                 byte[] imageData = null;
                 FileInfo fileInfo = new FileInfo(fileName);
@@ -85,7 +85,7 @@ namespace StudentWebMarket.Web.Controllers
                 FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
                 BinaryReader br = new BinaryReader(fs);
                 imageData = br.ReadBytes((int)imageFileLength);
-                return File(imageData, "image/png");
+                return File(imageData, "image/jpg");
             }
         }
     }

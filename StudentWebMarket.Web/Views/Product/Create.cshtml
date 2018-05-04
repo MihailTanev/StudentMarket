@@ -1,0 +1,123 @@
+﻿@model StudentWebMarket.Web.ViewModels.CreateProductViewModel
+@{
+
+    ViewBag.Title = "Create";
+}
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="page-header">
+                Create Ad
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.LabelFor(model => model.SalePrice, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SalePrice, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SalePrice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.OriginaPrice, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OriginaPrice, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OriginaPrice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.UploadPhoto, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.UploadPhoto, htmlAttributes: new { type = "file", id = "imgInp" })
+                    <img id="picture" src="#" alt="" class="img-responsive" width="300" height="300" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Category.CategoryId, "Category", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.DropDownList("CategoryId", null, "-- Select Category --", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Category.CategoryId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.Year, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Year", new SelectList(Enumerable.Range(2000, DateTime.Now.Year - 1999)
+                                                             .ToList()), "-- Select Year --", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Condition.ConditionId, "Condition", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ConditionId", null, "-- Select Condition --", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Condition.ConditionId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Description, 4, 40, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10 dimension">
+                    <input type="submit" value="Create" class="btn btn-primary btn-default" />
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-danger btn-default">Cancel</a>
+                </div>
+            </div>
+        </div>
+        @if (TempData["Success"] != null)
+        {
+            <div>
+                <h3 class="alert alert-success" id="successMessage">
+                    <strong> @TempData["Success"]</strong>
+                </h3>
+            </div>
+        }
+        @if (TempData["Failed"] != null)
+        {
+            <div>
+                <h3 class="alert alert-success" id="successMessage">
+                    <strong class="alert-danger"> @TempData["Failed"]</strong>
+                </h3>
+            </div>
+        }
+    </div>
+}
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#picture').attr('src', e.target.result).height(300);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imgInp").change(function () {
+        readURL(this);
+    });
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
