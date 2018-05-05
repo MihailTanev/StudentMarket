@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace StudentWebMarket.Web.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class CategoryController : BaseController
     {
 

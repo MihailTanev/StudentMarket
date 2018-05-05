@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentWebMarket.Models", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentWebMarket.Web", "StudentWebMarket.Web\StudentWebMarket.Web.csproj", "{33C43335-4D3B-49D5-9E4E-1DB2EFD6C9CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudenWebMarket.WebAndLoadTestProject", "StudenWebMarket.WebAndLoadTestProject\StudenWebMarket.WebAndLoadTestProject.csproj", "{1BC7FBBC-3E71-45FD-9C2E-2534C2160734}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FB9C2D59-CD90-4D9B-8058-3191E28ED64A}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{33C43335-4D3B-49D5-9E4E-1DB2EFD6C9CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33C43335-4D3B-49D5-9E4E-1DB2EFD6C9CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33C43335-4D3B-49D5-9E4E-1DB2EFD6C9CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC7FBBC-3E71-45FD-9C2E-2534C2160734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC7FBBC-3E71-45FD-9C2E-2534C2160734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC7FBBC-3E71-45FD-9C2E-2534C2160734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC7FBBC-3E71-45FD-9C2E-2534C2160734}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

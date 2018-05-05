@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest1" Id="abeea7ab-2efa-4aa5-b9fb-851053d39b64" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" DeploymentItemsEditable="bacon.jpg" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.075ad490-ccfd-4142-8bbb-ce7c5838270d.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="119038e2-9195-49c9-966d-edff79cb7a19" Version="1.1" Url="http://localhost:2165/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="GET" Guid="babf2b69-334d-48e3-9aa5-3e8dd649de89" Version="1.1" Url="http://localhost:2165/Account/Login" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="db93536c-1887-4a45-b424-2c2d23e64e27" Version="1.1" Url="http://fonts.googleapis.com/css" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Account/Login" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Raleway" RecordedValue="Raleway" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="353a7b7d-4bdc-4d70-814e-ca3705d5a3dd" Version="1.1" Url="http://localhost:2165/Account/Login" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:2165/" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/Account/Login" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="QRxGw6FLxuMEoKMWgEw2n6L55KKajDKtJjCTsrq7QC6dG7SuaXVunVSd3T01vu2TdVnCOVt91pme2Q_afvxgL5K3iY96Ej-4LZu_KokMNpI1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="UserName" Value="testuser" RecordedValue="testuser" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Password" Value="123456" RecordedValue="123456" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RememberMe" Value="{{$HIDDEN1.RememberMe}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="4f13544f-ef34-40a1-aec4-df2e2c72a3f6" Version="1.1" Url="http://localhost:2165/SearchProduct/Search" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="SearchString" Value="noki" RecordedValue="noki" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="7f6f94cc-42c5-4512-a8ec-dfc470d1d57a" Version="1.1" Url="http://localhost:2165/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/SearchProduct/Search" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="7af78aea-bacc-49d2-9642-c175622445f8" Version="1.1" Url="http://localhost:2165/Home/ProductsByCategory/2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="4540e962-66e5-4878-bb53-3ea9feb2065a" Version="1.1" Url="http://fonts.googleapis.com/css" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Home/ProductsByCategory/2" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Raleway" RecordedValue="Raleway" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="db86f2d7-3093-423a-b6fe-2f1531c671d3" Version="1.1" Url="http://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISQ.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Home/ProductsByCategory/2" />
+          </Headers>
+        </Request>
+        <Request Method="GET" Guid="7826da2f-916e-4146-902b-94166c4906c5" Version="1.1" Url="http://localhost:2165/fonts/fontawesome-webfont.eot" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Home/ProductsByCategory/2" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="193312c3-d2d1-49ac-88ee-7133b7eac08c" Version="1.1" Url="http://localhost:2165/fonts/glyphicons-halflings-regular.eot" ThinkTime="5" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Home/ProductsByCategory/2" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="0e3de02c-b5fd-4bfa-913c-077bbc1455db" Version="1.1" Url="http://localhost:2165/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="5b8b9b4a-3cd8-47f2-86ef-e237ebcaee35" Version="1.1" Url="http://fonts.googleapis.com/css" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Raleway" RecordedValue="Raleway" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="f994d072-dd9f-48e7-a33c-31bba665a139" Version="1.1" Url="http://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISQ.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/" />
+          </Headers>
+        </Request>
+        <Request Method="GET" Guid="f946010a-9ac9-4713-831f-717d1c819bf2" Version="1.1" Url="http://localhost:2165/fonts/glyphicons-halflings-regular.eot" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/Home/ProductsByCategory/2" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="1cc6eb07-8f55-4a2d-8004-9ae35cd744c0" Version="1.1" Url="http://localhost:2165/Product/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="0627d62f-1c9c-4417-988e-f9bfe742e0e4" Version="1.1" Url="http://localhost:2165/Product/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Product/Create" />
+          </Headers>
+          <CorrelationExtractionRules>
+            <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.CategoryId" DisplayName="" Description="">
+              <RuleParameters>
+                <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+                <RuleParameter Name="EndsWith" Value="&quot;&gt;Lap" />
+                <RuleParameter Name="Index" Value="9" />
+                <RuleParameter Name="IgnoreCase" Value="False" />
+                <RuleParameter Name="UseRegularExpression" Value="False" />
+                <RuleParameter Name="HtmlDecode" Value="True" />
+                <RuleParameter Name="Required" Value="False" />
+              </RuleParameters>
+            </ExtractionRule>
+            <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.Year" DisplayName="" Description="">
+              <RuleParameters>
+                <RuleParameter Name="StartsWith" Value="max=&quot;" />
+                <RuleParameter Name="EndsWith" Value="&quot; dat" />
+                <RuleParameter Name="Index" Value="2" />
+                <RuleParameter Name="IgnoreCase" Value="False" />
+                <RuleParameter Name="UseRegularExpression" Value="False" />
+                <RuleParameter Name="HtmlDecode" Value="True" />
+                <RuleParameter Name="Required" Value="False" />
+              </RuleParameters>
+            </ExtractionRule>
+            <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.ConditionId" DisplayName="" Description="">
+              <RuleParameters>
+                <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+                <RuleParameter Name="EndsWith" Value="&quot;&gt;Tab" />
+                <RuleParameter Name="Index" Value="11" />
+                <RuleParameter Name="IgnoreCase" Value="False" />
+                <RuleParameter Name="UseRegularExpression" Value="False" />
+                <RuleParameter Name="HtmlDecode" Value="True" />
+                <RuleParameter Name="Required" Value="False" />
+              </RuleParameters>
+            </ExtractionRule>
+          </CorrelationExtractionRules>
+        </Request>
+        <Request Method="GET" Guid="50d3341f-52ad-4d4f-abb7-4b3241acdf93" Version="1.1" Url="http://fonts.googleapis.com/css" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Product/Create" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Raleway" RecordedValue="Raleway" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="465a9a0f-38f8-4476-a49b-267c1f922251" Version="1.1" Url="http://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISQ.woff" ThinkTime="104" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Product/Create" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.__RequestVerificationToken" DisplayName="Extract Form Field" Description="Extract the value of a specified form field in the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="__RequestVerificationToken" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="1" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="453db393-82ae-49f4-914a-0da9a64017b6" Version="1.1" Url="http://localhost:2165/Product/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/Product/Create" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{FormPostParam1.__RequestVerificationToken}}" RecordedValue="G0v6ZC2w0E1o3VzioyS75aPxGAuO8F2excYhjgOgENXbWWFeHymSSlAKHSMYHcM4NFUu-Hj4nId6aYsl2V9LmjXd_LQmYbiCzsKN2TcbWSOqCLtdUDc2SxA9Nf63r-TjKprZE2ScYrGd3BDcMcSQ2w2" CorrelationBinding="{{FormPostParam1.__RequestVerificationToken}}" UrlEncode="True" />
+        <FormPostParameter Name="SalePrice" Value="1000" RecordedValue="1000" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="OriginaPrice" Value="1500" RecordedValue="1500" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Name" Value="test" RecordedValue="test" CorrelationBinding="" UrlEncode="True" />
+        <FileUploadParameter Name="UploadPhoto" FileName="bacon.jpg" ContentType="image/jpeg" GenerateUniqueName="True" UseGuids="False" FileUploadName="" HtmlEncodeFileName="True" />
+        <FormPostParameter Name="CategoryId" Value="2" RecordedValue="2" CorrelationBinding="{{FormPostParam2.CategoryId}}" UrlEncode="True" />
+        <FormPostParameter Name="Year" Value="2018" RecordedValue="2018" CorrelationBinding="{{FormPostParam3.Year}}" UrlEncode="True" />
+        <FormPostParameter Name="ConditionId" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam4.ConditionId}}" UrlEncode="True" />
+        <FormPostParameter Name="Description" Value="test" RecordedValue="test" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="7a8aedb6-978c-4d9f-aa57-bb6ef876481f" Version="1.1" Url="http://localhost:2165/Product/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/Product/Create" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="55e50b72-5e32-47d5-a00f-efbf26c7dd06" Version="1.1" Url="http://localhost:2165/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="289f7674-3f97-448c-99ee-9813d9789b02" Version="1.1" Url="http://fonts.googleapis.com/css" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Raleway" RecordedValue="Raleway" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="817b94f5-04be-41ba-97fb-a1d09ece495f" Version="1.1" Url="http://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISQ.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/" />
+          </Headers>
+        </Request>
+        <Request Method="GET" Guid="52f6d8d6-ee54-435f-b222-6e08190265c3" Version="1.1" Url="http://localhost:2165/fonts/glyphicons-halflings-regular.eot" ThinkTime="17" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/Product/Create" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="96b68b13-674c-4955-839c-5c76d60a913b" Version="1.1" Url="http://localhost:2165/Product/ProductDetails/10" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="e42edc58-25a1-49d6-aff8-5862a6539345" Version="1.1" Url="http://fonts.googleapis.com/css" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Product/ProductDetails/10" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Raleway" RecordedValue="Raleway" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="48b762d0-8da3-4554-8ca9-833fe9492723" Version="1.1" Url="http://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISQ.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Product/ProductDetails/10" />
+          </Headers>
+        </Request>
+        <Request Method="GET" Guid="4a2488f1-12dd-4f2c-ab2b-2aa3ec15f65e" Version="1.1" Url="http://localhost:2165/fonts/fontawesome-webfont.eot" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Product/ProductDetails/10" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="b52fa4da-d50b-493f-97c9-e3b0912ba3c0" Version="1.1" Url="http://localhost:2165/fonts/glyphicons-halflings-regular.eot" ThinkTime="54" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:2165/Product/ProductDetails/10" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="853bf31c-8866-48dc-a523-ebb16d4e3844" Version="1.1" Url="http://localhost:2165/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/Product/ProductDetails/10" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="a0665602-354b-4091-b19f-cb8636daf9ec" Version="1.1" Url="http://localhost:2165/fonts/glyphicons-halflings-regular.eot" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2165/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

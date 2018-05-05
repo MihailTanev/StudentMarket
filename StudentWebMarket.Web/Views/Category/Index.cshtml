@@ -28,7 +28,7 @@
     {
         <tr>
             <td>
-                <a href="@Url.Action("CategoryProducts", "Home", new { Id=item.CategoryId})">
+                <a href="@Url.Action("ProductsByCategory", "Home", new { Id=item.CategoryId})">
                     <span class="glyphicon glyphicon-folder-open"></span> &nbsp;
                     @Html.DisplayFor(modelItem => item.Name)
                 </a>

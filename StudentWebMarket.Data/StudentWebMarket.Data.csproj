@@ -54,9 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\StudentWebMarketDbContext.cs" />
-    <Compile Include="Migrations\201805041749165_cat.cs" />
-    <Compile Include="Migrations\201805041749165_cat.Designer.cs">
-      <DependentUpon>201805041749165_cat.cs</DependentUpon>
+    <Compile Include="Migrations\201805050943412_admin.cs" />
+    <Compile Include="Migrations\201805050943412_admin.Designer.cs">
+      <DependentUpon>201805050943412_admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +92,7 @@
     <Content Include="bin\Debug\StudentWebMarket.Data.pdb" />
     <Content Include="bin\Debug\StudentWebMarket.Models.dll" />
     <Content Include="bin\Debug\StudentWebMarket.Models.pdb" />
+    <Content Include="Migrations\Images\admin.jpg" />
     <Content Include="Migrations\Images\aspnet.jpg" />
     <Content Include="Migrations\Images\asus-latest.jpg" />
     <Content Include="Migrations\Images\asus-memo.jpg" />
@@ -108,8 +109,8 @@
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805041749165_cat.resx">
-      <DependentUpon>201805041749165_cat.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805050943412_admin.resx">
+      <DependentUpon>201805050943412_admin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
