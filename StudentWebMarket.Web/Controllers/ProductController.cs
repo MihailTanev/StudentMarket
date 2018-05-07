@@ -5,6 +5,7 @@ using StudentWebMarket.Web.ViewModels;
 using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 
 namespace StudentWebMarket.Web.Controllers
@@ -116,6 +117,25 @@ namespace StudentWebMarket.Web.Controllers
                     Description = g.Description
                 }).FirstOrDefault();
             return View(model);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            Product product = this.db.Products.GetById(id);
+            return View(product);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int Id)
+        {
+            var product = this.db.Products.All().Where(x => x.ProductId == Id);
+            if (product == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            this.db.Products.Delete(Id);
+            this.db.SaveChanges();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
