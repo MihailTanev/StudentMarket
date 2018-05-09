@@ -19,10 +19,9 @@ namespace StudentWebMarket.Web.Controllers
                     .Where(s => s.Name
                     .Contains(searchstring) || s
                     .Category.Name.Contains(searchstring))
-                    .OrderByDescending(s => s.CreatedOn);
+                    .OrderByDescending(s => s.CreatedOn);                    
             }
-            return PartialView("_ProductPartial", products.ToList()
-                .OrderByDescending(x => x.CreatedOn));
+            return PartialView("_ProductPartial", products.ToList());                
         }
     }
 }
