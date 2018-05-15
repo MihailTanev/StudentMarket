@@ -18,6 +18,8 @@ namespace StudentWebMarket.Data.UnitOfWork
         IRepository<Image> Images { get; }
         IRepository<User> Users { get; }
         IRepository<Condition> Conditions { get; }
+        IRepository<School> Schools { get; }
+        IRepository<StudentProgram> StudentPrograms { get; }
 
         void Dispose();
         int SaveChanges();

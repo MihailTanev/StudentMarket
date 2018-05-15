@@ -73,6 +73,12 @@
                         <div class='col-md-6'>@product.Seller.PhoneNumber</div>
                     </div>
                     <div class='row'>
+                        <div class='col-md-8'>@product.Seller.Schools.Name</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-8'><i class="fa fa-graduation-cap" style="color:#337ab7"></i> @product.Seller.StudentPrograms.Name</div>
+                    </div>
+                    <div class='row'>
                         <div class='col-md-8'>User Since: @product.Seller.RegistrationDate.Value.ToString("MMMM / yyyy")</div>
                     </div>
                     <div class='row'>

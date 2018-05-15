@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using StudentWebMarket.Data.EF;
 using StudentWebMarket.Models.Models;
 using StudentWebMarket.Web.Models;
 
@@ -138,6 +139,8 @@ namespace StudentWebMarket.Web.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            DropDownListSchools();
+            DropDownListStudProg();
             return View();
         }
 
@@ -168,6 +171,8 @@ namespace StudentWebMarket.Web.Controllers
                     LastName = model.LastName,
                     RegistrationDate = DateTime.Now,
                     PhoneNumber = model.PhoneNumber,
+                    SchoolId=model.SchoolId,
+                    StudentProgramId=model.StudentProgramId
                 };
                 user.UserPhoto = imageData;
 
@@ -443,6 +448,22 @@ namespace StudentWebMarket.Web.Controllers
             base.Dispose(disposing);
         }
 
+        private void DropDownListSchools(object selectedConditions = null)
+        {
+            StudentWebMarketDbContext db = new StudentWebMarketDbContext();
+            var conditionQuery = from d in db.Schools
+                                 orderby d.Name
+                                 select d;
+            ViewBag.SchoolId = new SelectList(conditionQuery, "SchoolId", "Name", selectedConditions);
+        }
+        private void DropDownListStudProg(object selectedConditions = null)
+        {
+            StudentWebMarketDbContext db = new StudentWebMarketDbContext();
+            var conditionQuery = from d in db.StudentPrograms
+                                 orderby d.Name
+                                 select d;
+            ViewBag.StudentProgramId = new SelectList(conditionQuery, "StudentProgramId", "Name", selectedConditions);
+        }
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";

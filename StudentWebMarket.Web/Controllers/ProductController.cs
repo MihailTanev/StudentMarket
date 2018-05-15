@@ -110,6 +110,8 @@ namespace StudentWebMarket.Web.Controllers
                     Condition = g.Condition.Name,
                     CategoryName = g.Category.Name,
                     ImageId = g.Image.ImageId,
+                    SchoolName = g.Seller.Schools.Name,
+                    StudentProgramName = g.Seller.StudentPrograms.Name,
                     SellerFirstName = g.Seller.FirstName,
                     SellerLastName = g.Seller.LastName,
                     SellerEmail = g.Seller.Email,

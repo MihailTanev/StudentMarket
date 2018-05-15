@@ -34,10 +34,22 @@ namespace StudentWebMarket.Data.Migrations
                 Email = "john0332@stud.kea.dk",
                 UserName = "testUser",
                 PhoneNumber = "50 645 177",
-               // UserPhoto = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-               // "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/johndoe.jpg")),
+                //UserPhoto = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                //"C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/johndoe.jpg")),
                 RegistrationDate = new DateTime(2018, 4, 2)
             };
+
+            var school = new School
+            {
+                Name = "Kea"
+            };
+            user.Schools = school;
+
+            var studPro = new StudentProgram
+            {
+                Name = "Computer Science"
+            };
+            user.StudentPrograms = studPro;
 
             var createdUser = context.Users
                 .Where(u => string.Compare(u.Email, user.Email, true) == 0)

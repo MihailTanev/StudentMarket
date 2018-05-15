@@ -21,6 +21,11 @@ namespace StudentWebMarket.Web.ViewModels
         public int? Year { get; set; }
         public string CategoryName { get; set; }
         public int? ImageId { get; set; }
+        public int? SchoolId { get; set; }
+        public string SchoolName { get; set; }
+        public string StudentProgramName { get; set; }
+
+        public int? StudentProgramId { get; set; }
         public string SellerName { get; set; }
         public string SellerFirstName { get; set; }
         public string SellerLastName { get; set; }
