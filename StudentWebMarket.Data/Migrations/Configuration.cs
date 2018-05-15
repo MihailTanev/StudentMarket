@@ -31,12 +31,12 @@ namespace StudentWebMarket.Data.Migrations
             {
                 FirstName = "John",
                 LastName = "Doe",
-                Email = "test_user@gmail.com",
+                Email = "john0332@stud.kea.dk",
                 UserName = "testUser",
-                PhoneNumber = "12 345 678",
-                //UserPhoto = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                //"C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/profileimage.jpg")),
-                RegistrationDate = new DateTime(2015, 1, 10)
+                PhoneNumber = "50 645 177",
+               // UserPhoto = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+               // "C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/johndoe.jpg")),
+                RegistrationDate = new DateTime(2018, 4, 2)
             };
 
             var createdUser = context.Users
@@ -50,7 +50,7 @@ namespace StudentWebMarket.Data.Migrations
                 {
                     OriginalPrice = 2000,
                     SalePrice = 800,
-                    CreatedOn = new DateTime(2017, 1, 10),
+                    CreatedOn = new DateTime(2018, 1, 10),
                     Year = 2017,
                     Description = "Android 4.4 Kit Kat OS, 1.2 GHz quad-core processor",
                     Name = "Samsung Galaxy"
@@ -82,7 +82,7 @@ namespace StudentWebMarket.Data.Migrations
                 {
                     OriginalPrice = 1200,
                     SalePrice = 600,
-                    CreatedOn = new DateTime(2017, 2, 8),
+                    CreatedOn = new DateTime(2018, 2, 8),
                     Year = 2016,
                     Description = "Pad 7 ME170CX-A1-BK 7-Inch 16GB Tablet. Dual-Core Intel Atom Z2520 1.2GHz CPU",
                     Name = "ASUS MeMO"
@@ -104,7 +104,7 @@ namespace StudentWebMarket.Data.Migrations
                 {
                     OriginalPrice = 3500,
                     SalePrice = 1500,
-                    CreatedOn = new DateTime(2018, 2, 3),
+                    CreatedOn = new DateTime(2018, 3, 3),
                     Year = 2018,
                     Description = "This Certified Refurbished product is manufacturer refurbished, shows limited or no wear, and includes all original accessories plus a 90-day warranty",
                     Name = "HP Pavilion 15-r030wm"
@@ -135,7 +135,7 @@ namespace StudentWebMarket.Data.Migrations
                 {
                     OriginalPrice = 4000,
                     SalePrice = 2000,
-                    CreatedOn = new DateTime(2018, 2, 8),
+                    CreatedOn = new DateTime(2018, 3, 15),
                     Year = 2017,
                     Description = "Intel Celeron N2830 Processor, 15.6-Inch Screen, Intel HD Graphics",
                     Name = "Dell Inspiron 15.6-Inch",
@@ -156,7 +156,7 @@ namespace StudentWebMarket.Data.Migrations
                 {
                     OriginalPrice = 3000,
                     SalePrice = 1000,
-                    CreatedOn = new DateTime(2017, 1, 10),
+                    CreatedOn = new DateTime(2018, 1, 31),
                     Year = 2017,
                     Description = "13 MP Rear Facing BSI Camera / 5 MP Front Facing",
                     Name = "HTC Desire 816"
@@ -188,7 +188,7 @@ namespace StudentWebMarket.Data.Migrations
                 {
                     OriginalPrice = 2500,
                     SalePrice = 1300,
-                    CreatedOn = new DateTime(2018, 2, 8),
+                    CreatedOn = new DateTime(2018, 2, 21),
                     Year = 2017,
                     Description = "T-Mobile Cell Phone 4G - White. 5MP Camera - Snap creative photos with built-in digital lenses",
                     Name = "Nokia Lumia 521",
@@ -209,7 +209,7 @@ namespace StudentWebMarket.Data.Migrations
                 {
                     OriginalPrice = 1500,
                     SalePrice = 800,
-                    CreatedOn = new DateTime(2015, 3, 1),
+                    CreatedOn = new DateTime(2018, 5, 6),
                     Year = 2017,
                     Description = "Head First Java delivers a highly interactive, multisensory learning experience that lets new programmers pick up the fundamentals of the Java language quickly",
                     Name = "Head First Java",
@@ -235,7 +235,7 @@ namespace StudentWebMarket.Data.Migrations
                 {
                     OriginalPrice = 500,
                     SalePrice = 300,
-                    CreatedOn = new DateTime(2018, 4, 8),
+                    CreatedOn = new DateTime(2018, 5, 10),
                     Year = 2017,
                     Description = "A full-color introduction to the basics of HTML and CSS",
                     Name = "Pro HTML and CSS3",
