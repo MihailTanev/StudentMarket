@@ -70,7 +70,7 @@ namespace StudentWebMarket.Web.Controllers
             }
             catch
             {
-                TempData["Failed"] = "File upload failed! Select file and course";
+                TempData["Failed"] = "File upload failed!";
                 return RedirectToAction("Create", "Product");
             }
         }

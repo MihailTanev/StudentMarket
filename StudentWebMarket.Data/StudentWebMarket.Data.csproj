@@ -97,8 +97,8 @@
     <Content Include="Migrations\Images\hp-pavilion.jpg" />
     <Content Include="Migrations\Images\htc-desire.jpg" />
     <Content Include="Migrations\Images\java.jpg" />
+    <Content Include="Migrations\Images\johndoe.jpg" />
     <Content Include="Migrations\Images\nokia-lumia.jpg" />
-    <Content Include="Migrations\Images\profileimage.jpg" />
     <Content Include="Migrations\Images\samsung-galaxy.jpg" />
   </ItemGroup>
   <ItemGroup>
