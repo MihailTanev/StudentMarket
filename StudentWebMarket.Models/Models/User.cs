@@ -15,6 +15,11 @@ namespace StudentWebMarket.Models.Models
         public string LastName { get; set; }
         public byte[] UserPhoto { get; set; }
 
+        public int? SchoolId { get; set; }
+        public virtual School Schools { get; set; }
+
+        public int? StudentProgramId { get; set; }
+        public virtual StudentProgram StudentPrograms { get; set; }
 
         public DateTime? RegistrationDate { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)

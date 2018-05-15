@@ -61,6 +61,20 @@ namespace StudentWebMarket.Data.UnitOfWork
                 return this.GetRepository<Image>();
             }
         }
+        public IRepository<School> Schools
+        {
+            get
+            {
+                return this.GetRepository<School>();
+            }
+        }
+        public IRepository<StudentProgram> StudentPrograms
+        {
+            get
+            {
+                return this.GetRepository<StudentProgram>();
+            }
+        }
 
 
         public DbContext Context

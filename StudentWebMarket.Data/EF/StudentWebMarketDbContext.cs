@@ -20,7 +20,8 @@ namespace StudentWebMarket.Data.EF
         public virtual IDbSet<Category> Categories { get; set; }
         public virtual IDbSet<Condition> Conditions { get; set; }
         public virtual IDbSet<Image> Images { get; set; }
-
+        public virtual IDbSet<School> Schools { get; set; }
+        public virtual IDbSet<StudentProgram> StudentPrograms { get; set; }
 
         public static StudentWebMarketDbContext Create()
         {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using StudentWebMarket.Models.Models;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace StudentWebMarket.Web.Models
@@ -67,6 +68,13 @@ namespace StudentWebMarket.Web.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        public School School { get; set; }
+        public StudentProgram StudentProgram { get; set; }
+
+        public int SchoolId { get; set; }
+        public int StudentProgramId { get; set; }
+
 
         [Required]
         [Display(Name = "UserName")]
