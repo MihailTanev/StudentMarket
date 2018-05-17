@@ -61,7 +61,9 @@
     <Compile Include="Repositories\ICategoryRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\ISchoolRepository.cs" />
+    <Compile Include="Repositories\IStudentProgramRepository.cs" />
     <Compile Include="Repositories\SchoolRepository.cs" />
+    <Compile Include="Repositories\StudentProgramRepository.cs" />
     <Compile Include="UnitOfWork\IStudentWebMarketData.cs" />
     <Compile Include="UnitOfWork\StudentWebMarketData.cs" />
   </ItemGroup>

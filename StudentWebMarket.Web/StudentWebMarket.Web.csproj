@@ -196,6 +196,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\StudentProgramController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -307,6 +308,10 @@
     <Content Include="Views\School\Create.cshtml" />
     <Content Include="Views\School\Edit.cshtml" />
     <Content Include="Views\School\Delete.cshtml" />
+    <Content Include="Views\StudentProgram\Index.cshtml" />
+    <Content Include="Views\StudentProgram\Create.cshtml" />
+    <Content Include="Views\StudentProgram\Edit.cshtml" />
+    <Content Include="Views\StudentProgram\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
