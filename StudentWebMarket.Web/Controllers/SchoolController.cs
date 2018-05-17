@@ -10,22 +10,22 @@ using System.Web.Mvc;
 namespace StudentWebMarket.Web.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class CategoryController : BaseController
+    public class SchoolController : BaseController
     {
 
-        private CategoryRepository categoryRepository = null;
+        private SchoolRepository schoolRepository = null;
         private StudentWebMarketDbContext data = new StudentWebMarketDbContext();
 
-        public CategoryController()
+        public SchoolController()
         {
-            categoryRepository = new CategoryRepository();
+            schoolRepository = new SchoolRepository();
         }
 
         // GET: Course
         public ActionResult Index()
         {
-            var category = categoryRepository.FindAll();
-            return View(category);
+            var school = schoolRepository.FindAll();
+            return View(school);
         }
 
         [HttpGet]
@@ -35,54 +35,54 @@ namespace StudentWebMarket.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Category category)
+        public ActionResult Create(School school)
         {
             if (ModelState.IsValid)
             {
-                categoryRepository.Insert(category);
-                categoryRepository.Save();
+                schoolRepository.Insert(school);
+                schoolRepository.Save();
                 return RedirectToAction("Index");
             }
             else
             {
-                return View(category);
+                return View(school);
             }
         }
 
         [HttpGet]
         public ActionResult Edit(int Id)
         {
-            var category = categoryRepository.GetById(Id);
-            return View(category);
+            var school = schoolRepository.GetById(Id);
+            return View(school);
         }
 
         [HttpPost]
-        public ActionResult Edit(Category category)
+        public ActionResult Edit(School school)
         {
             if (ModelState.IsValid)
             {
-                categoryRepository.Update(category);
-                categoryRepository.Save();
+                schoolRepository.Update(school);
+                schoolRepository.Save();
                 return RedirectToAction("Index");
             }
             else
             {
-                return View(category);
+                return View(school);
             }
         }
 
         public ActionResult Delete(int Id)
         {
-            var school = categoryRepository.GetById(Id);
+            var school = schoolRepository.GetById(Id);
             return View(school);
         }
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int Id)
         {
-            var category = categoryRepository.GetById(Id);
-            categoryRepository.Delete(Id);
-            categoryRepository.Save();
+            var school = schoolRepository.GetById(Id);
+            schoolRepository.Delete(Id);
+            schoolRepository.Save();
             return RedirectToAction("Index");
         }
     }

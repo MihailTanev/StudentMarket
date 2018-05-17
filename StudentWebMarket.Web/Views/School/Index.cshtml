@@ -1,0 +1,40 @@
+﻿@model IEnumerable<StudentWebMarket.Models.Models.School>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Student Market Management</h2>
+
+<a href="@Url.Action("Create","School")" style="margin-bottom:10px;" class="btn btn-primary">Create School</a>
+
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("School")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("ProductsByCategory", "Home", new { Id=item.SchoolId})">
+                    <i class="fa fa-university" aria-hidden="true"></i> &nbsp;
+                    @Html.DisplayFor(modelItem => item.Name)
+                </a>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SchoolId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SchoolId })
+            </td>
+        </tr>
+    }
+</table>
+
+
+<a class='btn btn-default' href="@Url.Action("Index", "Category")" style='width:80px'>
+    <i class='glyphicon glyphicon-chevron-left'></i> Back
+</a>

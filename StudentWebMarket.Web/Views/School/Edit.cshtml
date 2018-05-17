@@ -1,12 +1,10 @@
-﻿@model StudentWebMarket.Models.Models.Category
+﻿@model StudentWebMarket.Models.Models.School
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
 
-<h2>Create</h2>
-
-
+<h2>Edit School</h2>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -14,8 +12,10 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.SchoolId)
+
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
@@ -24,15 +24,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a href="@Url.Action("Index","School")" class="btn btn-danger btn-default">Cancel</a>
             </div>
         </div>
     </div>
 }
-
-<a class='btn btn-default' href="@Url.Action("Index", "Category")" style='width:80px'>
-    <i class='glyphicon glyphicon-chevron-left'></i> Back
-</a>
 
 
 @section Scripts {

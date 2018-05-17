@@ -36,7 +36,7 @@ namespace StudentWebMarket.Data.Migrations
                 PhoneNumber = "50 645 177",
                 //UserPhoto = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                 //"C:/Users/Navn/Source/Repos/StudentWebMarket/StudentWebMarket.Data/Migrations/Images/johndoe.jpg")),
-                RegistrationDate = new DateTime(2018, 4, 2)
+                RegistrationDate = new DateTime(2018, 1, 1)
             };
 
             var school = new School

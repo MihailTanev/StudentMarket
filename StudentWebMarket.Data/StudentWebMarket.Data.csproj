@@ -60,6 +60,8 @@
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\ICategoryRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\ISchoolRepository.cs" />
+    <Compile Include="Repositories\SchoolRepository.cs" />
     <Compile Include="UnitOfWork\IStudentWebMarketData.cs" />
     <Compile Include="UnitOfWork\StudentWebMarketData.cs" />
   </ItemGroup>
