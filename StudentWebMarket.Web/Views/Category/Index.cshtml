@@ -5,8 +5,9 @@
 }
 
 <h2>Student Market Management</h2>
-<a href="@Url.Action("Create","Category")" style="margin-bottom:10px;" class="btn btn-primary">Category</a>
-<a href="@Url.Action("Index","School")" style="margin-bottom:10px;" class="btn btn-primary">Schools</a>
+<a href="@Url.Action("Create","Category")" style="margin-bottom:10px;">Category |</a>
+<a href="@Url.Action("Index","School")" style="margin-bottom:10px;">Schools |</a>
+<a href="@Url.Action("Index","StudentProgram")" style="margin-bottom:10px;">Student Programs</a>
 
 @using (Html.BeginForm("Search", "SearchProduct", FormMethod.Get))
 {

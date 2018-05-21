@@ -9,21 +9,19 @@ using System.Web.Mvc;
 
 namespace StudentWebMarket.Web.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class SchoolController : BaseController
+    public class StudentProgramController : BaseController
     {
-
-        private SchoolRepository schoolRepository = null;
+        private StudentProgramRepository studprogRepository = null;
         private StudentWebMarketDbContext data = new StudentWebMarketDbContext();
 
-        public SchoolController()
+        public StudentProgramController()
         {
-            schoolRepository = new SchoolRepository();
+            studprogRepository = new StudentProgramRepository();
         }
 
         public ActionResult Index()
         {
-            var school = schoolRepository.FindAll();
+            var school = studprogRepository.FindAll();
             return View(school);
         }
 
@@ -34,54 +32,54 @@ namespace StudentWebMarket.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(School school)
+        public ActionResult Create(StudentProgram program)
         {
             if (ModelState.IsValid)
             {
-                schoolRepository.Insert(school);
-                schoolRepository.Save();
+                studprogRepository.Insert(program);
+                studprogRepository.Save();
                 return RedirectToAction("Index");
             }
             else
             {
-                return View(school);
+                return View(program);
             }
         }
 
         [HttpGet]
         public ActionResult Edit(int Id)
         {
-            var school = schoolRepository.GetById(Id);
-            return View(school);
+            var program = studprogRepository.GetById(Id);
+            return View(program);
         }
 
         [HttpPost]
-        public ActionResult Edit(School school)
+        public ActionResult Edit(StudentProgram program)
         {
             if (ModelState.IsValid)
             {
-                schoolRepository.Update(school);
-                schoolRepository.Save();
+                studprogRepository.Update(program);
+                studprogRepository.Save();
                 return RedirectToAction("Index");
             }
             else
             {
-                return View(school);
+                return View(program);
             }
         }
 
         public ActionResult Delete(int Id)
         {
-            var school = schoolRepository.GetById(Id);
-            return View(school);
+            var program = studprogRepository.GetById(Id);
+            return View(program);
         }
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int Id)
         {
-            var school = schoolRepository.GetById(Id);
-            schoolRepository.Delete(Id);
-            schoolRepository.Save();
+            var program = studprogRepository.GetById(Id);
+            studprogRepository.Delete(Id);
+            studprogRepository.Save();
             return RedirectToAction("Index");
         }
     }
