@@ -2,8 +2,6 @@
 using Microsoft.AspNet.Identity.Owin;
 using StudentWebMarket.Data.EF;
 using StudentWebMarket.Web.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;

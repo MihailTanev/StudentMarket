@@ -11,11 +11,15 @@
         <div class="panel-body">
             <div class='row'>
                 <div class="col-md-2">
-                    <img width="50" height="100" src="@Url.Action("Image", "Home", new { id = product.ImageId })" class="center-block img-responsive" />
+                    <img width="50" height="100"
+                         src="@Url.Action("Image", "Home", new { id = product.ImageId })"
+                         class="center-block img-responsive" />
                 </div>
                 <div class='col-md-4'>
                     <div class='row'>
-                        <div class='col-md-12'><a href="@Url.Action("ProductDetails","Product",new {id= product.ProductId})">@product.Description</a></div>
+                        <div class='col-md-12'>
+                        <a href="@Url.Action("ProductDetails","Product",new {id= product.ProductId})">
+                            @product.Description</a></div>
                     </div>
                 </div>
                 <div class='col-md-2'>

@@ -1,7 +1,7 @@
 Student Market ASP.NET MVC application
 ====================================
 
-This app demonstrates how the students can share their educational expenses
+ASP.NET MVC application for sharing educational expenses
 
 Configuration
 -------------
