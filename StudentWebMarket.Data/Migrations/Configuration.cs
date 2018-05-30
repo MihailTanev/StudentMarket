@@ -250,7 +250,7 @@ namespace StudentWebMarket.Data.Migrations
                     CreatedOn = new DateTime(2018, 5, 10),
                     Year = 2017,
                     Description = "A full-color introduction to the basics of HTML and CSS",
-                    Name = "Pro HTML and CSS3",
+                    Name = "Pro HTML5 and CSS3",
 
                 };
                 product8.Seller = user;
