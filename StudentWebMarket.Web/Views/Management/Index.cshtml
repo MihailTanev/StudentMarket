@@ -5,7 +5,7 @@
 }
 
 <h2>Student Market Management</h2>
-<a href="@Url.Action("Create","Category")" style="margin-bottom:10px;">Category |</a>
+<a href="@Url.Action("CreateCategory","Management")" style="margin-bottom:10px;">Category |</a>
 <a href="@Url.Action("Index","School")" style="margin-bottom:10px;">Schools |</a>
 <a href="@Url.Action("Index","StudentProgram")" style="margin-bottom:10px;">Student Programs</a>
 
@@ -36,8 +36,8 @@
                 </a>
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
+                @Html.ActionLink("Edit", "EditCategory", new { id = item.CategoryId }) |
+                @Html.ActionLink("Delete", "DeleteCategory", new { id = item.CategoryId })
             </td>
         </tr>
     }
