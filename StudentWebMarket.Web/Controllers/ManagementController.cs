@@ -6,13 +6,13 @@ using System.Web.Mvc;
 namespace StudentWebMarket.Web.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class CategoryController : BaseController
+    public class ManagementController : BaseController
     {
 
         private CategoryRepository categoryRepository = null;
         private StudentWebMarketDbContext data = new StudentWebMarketDbContext();
 
-        public CategoryController()
+        public ManagementController()
         {
             categoryRepository = new CategoryRepository();
         }
@@ -25,13 +25,13 @@ namespace StudentWebMarket.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create()
+        public ActionResult CreateCategory()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(Category category)
+        public ActionResult CreateCategory(Category category)
         {
             if (ModelState.IsValid)
             {
@@ -46,14 +46,14 @@ namespace StudentWebMarket.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Edit(int Id)
+        public ActionResult EditCategory(int Id)
         {
             var category = categoryRepository.GetById(Id);
             return View(category);
         }
 
         [HttpPost]
-        public ActionResult Edit(Category category)
+        public ActionResult EditCategory(Category category)
         {
             if (ModelState.IsValid)
             {
@@ -67,14 +67,14 @@ namespace StudentWebMarket.Web.Controllers
             }
         }
 
-        public ActionResult Delete(int Id)
+        public ActionResult DeleteCategory(int Id)
         {
             var school = categoryRepository.GetById(Id);
             return View(school);
         }
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int Id)
+        [HttpPost, ActionName("DeleteCategory")]
+        public ActionResult DeleteCategoryConfirmed(int Id)
         {
             var category = categoryRepository.GetById(Id);
             categoryRepository.Delete(Id);
