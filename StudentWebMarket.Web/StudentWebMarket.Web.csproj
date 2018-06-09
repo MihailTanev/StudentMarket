@@ -193,6 +193,7 @@
     <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
@@ -207,6 +208,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ProductDetailsViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\UsersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -311,6 +313,7 @@
     <Content Include="Views\StudentProgram\Create.cshtml" />
     <Content Include="Views\StudentProgram\Edit.cshtml" />
     <Content Include="Views\StudentProgram\Delete.cshtml" />
+    <Content Include="Views\Users\ManageUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

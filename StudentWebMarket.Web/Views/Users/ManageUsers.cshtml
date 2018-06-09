@@ -1,0 +1,65 @@
+﻿@model IEnumerable<StudentWebMarket.Web.ViewModels.UsersViewModel>
+
+@{
+    ViewBag.Title = "Users With Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="box-title">
+            <b>Users</b>
+        </h3>
+        <a href="@Url.Action("Index","Management")" style="margin-bottom:10px;">Category |</a>
+        <a href="@Url.Action("Index","School")" style="margin-bottom:10px;">Schools |</a>
+        <a href="@Url.Action("Index","StudentProgram")" style="margin-bottom:10px;">Student Programs</a>
+        @using (Html.BeginForm("Search", "SearchProduct", FormMethod.Get))
+    {
+        <div>
+            @Html.TextBox("SearchString", null, new { @class = "form-control control-label col-md-2", placeholder = "Products" })
+            &nbsp;
+            <input type="submit" class="btn btn-primary" value="Search" />
+        </div>
+}
+    </div>
+    <!-- /.box-header -->
+    <div class="panel-body">
+        <table class="table table-hover table-condensed" id="example1">
+            <thead>
+                <tr>
+                    <td><b>Username</b></td>
+                    <td><b>Name</b></td>
+                    <td><b>Phone Number</b></td>
+                    <td><b>Email</b></td>
+                    <td><b>Roles</b></td>
+                    <td><b>Options</b></td>
+                </tr>
+            </thead>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Username</td>
+                    <td>@user.FirstName @user.LastName</td>
+                    <td>@user.PhoneNumber</td>
+                    <td>@user.Email</td>
+                    <td>@user.Role</td>
+                    <td>
+                        <a class='btn btn-danger' href="@Url.Action("Delete", "User", new { id = user.UserId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                            Delete
+                        </a> |
+                        <a class='btn btn-warning' href="@Url.Action("Delete", "User", new { id = user.UserId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                            Block
+                        </a>
+                        <a class='btn btn-success' href="@Url.Action("Delete", "User", new { id = user.UserId })" style='width:50px;padding:4px 6px;font-size:10px;'>
+                            Login as 
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <div class="panel-footer">
+        <p class="box-title"><b>Total Users till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">@Model.Count()</span></p>
+    </div>
+</div>
