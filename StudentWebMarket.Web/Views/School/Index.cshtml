@@ -4,33 +4,49 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Student Market Management</h2>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="box-title">
+            <b>Schools</b>
+        </h3>
+        <a href="@Url.Action("Create","School")" style="margin-bottom:10px;" class="btn btn-primary"><i class="fa fa-plus"> Create new school</i></a>
 
-<a href="@Url.Action("Create","School")" style="margin-bottom:10px;" class="btn btn-primary"><i class="fa fa-plus"> Create a school</i></a>
+    </div>
+    <!-- /.box-header -->
+    <div class="panel-body">
+        <table class="table table-hover table-condensed" id="example1">
+            <thead>
+                <tr>
+                    <td><b>School</b></td>                  
+                </tr>
+            </thead>
+            @foreach (var school in Model)
+            {
+                <tr>
+                    <td>
+                        <i class="fa fa-university" aria-hidden="true"></i> &nbsp;
+                        @school.Name
+                    </td>                    
+                    <td>
+                        <a class='btn btn-danger' href="@Url.Action("Edit", "School", new { id = school.SchoolId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                            Edit
+                        </a> |
+                        <a class='btn btn-warning' href="@Url.Action("Delete", "School", new { id = school.SchoolId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
 
-<br />
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayName("School")
-        </th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                <i class="fa fa-university" aria-hidden="true"></i> &nbsp;
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.SchoolId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SchoolId })
-            </td>
-        </tr>
-    }
-</table>
+    <div class="panel-footer">
+        <p class="box-title"><b>Total Schools : </b><span class="label label-primary">@Model.Count()</span></p>
+        <a class='btn btn-default' href="@Url.Action("ManageUsers", "Users")" style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>
 
 
-<a class='btn btn-default' href="@Url.Action("Index", "Management")" style='width:80px'>
-    <i class='glyphicon glyphicon-chevron-left'></i> Back
-</a>
+

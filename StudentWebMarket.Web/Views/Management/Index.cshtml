@@ -3,43 +3,47 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Student Market Management</h2>
-<a href="@Url.Action("CreateCategory","Management")" style="margin-bottom:10px;">Category |</a>
-<a href="@Url.Action("Index","School")" style="margin-bottom:10px;">Schools |</a>
-<a href="@Url.Action("Index","StudentProgram")" style="margin-bottom:10px;">Student Programs</a>
-
-@using (Html.BeginForm("Search", "SearchProduct", FormMethod.Get))
-{
-    <div>
-        @Html.TextBox("SearchString", null, new { @class = "form-control control-label col-md-2", placeholder = "Products" })
-        &nbsp;
-        <input type="submit" class="btn btn-primary" value="Search" />
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="box-title">
+            <b>Category</b>
+        </h3>
+        <a href="@Url.Action("Create","Management")" style="margin-bottom:10px;" class="btn btn-primary"><i class="fa fa-plus"> Create new category</i></a>
     </div>
-}
-<br />
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayName("Category")
-        </th>
-        <th></th>
-    </tr>
+    <!-- /.box-header -->
+    <div class="panel-body">
+        <table class="table table-hover table-condensed" id="example1">
+            <thead>
+                <tr>
+                    <td><b>Category</b></td>
+                </tr>
+            </thead>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("ProductsByCategory", "Home", new { Id=category.CategoryId})">
+                            <span class="glyphicon glyphicon-folder-open"></span> &nbsp;
+                            @Html.DisplayFor(modelItem => category.Name)
+                        </a>
+                    </td>
+                    <td>
+                        <a class='btn btn-danger' href="@Url.Action("Edit", "Management", new { id = category.CategoryId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                            Edit
+                        </a> |
+                        <a class='btn btn-warning' href="@Url.Action("Delete", "Management", new { id = category.CategoryId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                <a href="@Url.Action("ProductsByCategory", "Home", new { Id=item.CategoryId})">
-                    <span class="glyphicon glyphicon-folder-open"></span> &nbsp;
-                    @Html.DisplayFor(modelItem => item.Name)
-                </a>
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditCategory", new { id = item.CategoryId }) |
-                @Html.ActionLink("Delete", "DeleteCategory", new { id = item.CategoryId })
-            </td>
-        </tr>
-    }
-
-</table>
+    <div class="panel-footer">
+        <p class="box-title"><b>Total Categories : </b><span class="label label-primary">@Model.Count()</span></p>
+        <a class='btn btn-default' href="@Url.Action("ManageUsers", "Users")" style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>
