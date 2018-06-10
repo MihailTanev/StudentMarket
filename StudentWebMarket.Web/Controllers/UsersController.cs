@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace StudentWebMarket.Web.Controllers
 {
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
         private StudentWebMarketDbContext context = new StudentWebMarketDbContext();
         public ActionResult ManageUsers()
@@ -41,5 +41,7 @@ namespace StudentWebMarket.Web.Controllers
 
             return View(users);
         }
+
+
     }
 }
