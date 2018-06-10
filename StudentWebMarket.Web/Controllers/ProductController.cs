@@ -65,7 +65,6 @@ namespace StudentWebMarket.Web.Controllers
                     TempData["Success"] = "Your Ad has been successfully submitted!";
 
                 }
-                //TempData["Success"] = "Your Item Has Been Added Successfully!";
                 return RedirectToAction("Create", "Product");
             }
             catch

@@ -21,7 +21,7 @@ namespace StudentWebMarket.Web.Controllers
                     .Category.Name.Contains(searchstring))
                     .OrderByDescending(s => s.CreatedOn);                    
             }
-            return PartialView("_ProductPartial", products.ToList());                
+            return View(products.ToList());                
         }
     }
 }
