@@ -16,12 +16,12 @@ namespace StudentWebMarket.Web.Controllers
             var users = (from user in context.Users
                                   select new
                                   {
-                                      PhoneNumber=user.PhoneNumber,
+                                      user.PhoneNumber,
                                       UserId = user.Id,
                                       Username = user.UserName,
-                                      FirstName = user.FirstName,
-                                      LastName=user.LastName,
-                                      Email = user.Email,
+                                      user.FirstName,
+                                      user.LastName,
+                                      user.Email,
                                       RoleNames = (from userRole in user.Roles
                                                    join role in context.Roles on userRole.RoleId
                                                    equals role.Id
@@ -37,11 +37,7 @@ namespace StudentWebMarket.Web.Controllers
                                       Email = p.Email,
                                       Role = string.Join(",", p.RoleNames)
                                   });
-
-
             return View(users);
         }
-
-
     }
-}
+}   

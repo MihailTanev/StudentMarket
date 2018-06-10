@@ -301,7 +301,6 @@
     <Content Include="Views\Management\EditCategory.cshtml" />
     <Content Include="Views\Management\DeleteCategory.cshtml" />
     <Content Include="Views\Product\ProductDetails.cshtml" />
-    <Content Include="Views\Shared\_ProductPartial.cshtml" />
     <Content Include="Views\Shared\_CategoryPartial.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
@@ -314,6 +313,7 @@
     <Content Include="Views\StudentProgram\Edit.cshtml" />
     <Content Include="Views\StudentProgram\Delete.cshtml" />
     <Content Include="Views\Users\ManageUsers.cshtml" />
+    <Content Include="Views\SearchProduct\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
