@@ -10,17 +10,27 @@
         <h3 class="box-title">
             <b>Users</b>
         </h3>
-        <a href="@Url.Action("Index","Management")" style="margin-bottom:10px;">Category |</a>
-        <a href="@Url.Action("Index","School")" style="margin-bottom:10px;">Schools |</a>
-        <a href="@Url.Action("Index","StudentProgram")" style="margin-bottom:10px;">Student Programs</a>
+        <ul class="list-inline">
+            <li>
+                <a href="@Url.Action("Index","Management")" style="margin-bottom:10px;">Category </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index","School")" style="margin-bottom:10px;">Schools </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index","StudentProgram")" style="margin-bottom:10px;">Student Programs</a>
+            </li>
+        </ul>
+
+
         @using (Html.BeginForm("Search", "SearchProduct", FormMethod.Get))
-    {
-        <div>
-            @Html.TextBox("SearchString", null, new { @class = "form-control control-label col-md-2", placeholder = "Products" })
-            &nbsp;
-            <input type="submit" class="btn btn-primary" value="Search" />
-        </div>
-}
+        {
+            <div>
+                @Html.TextBox("SearchString", null, new { @class = "form-control control-label col-md-2", placeholder = "Products" })
+                &nbsp;
+                <input type="submit" class="btn btn-primary" value="Search" />
+            </div>
+        }
     </div>
     <!-- /.box-header -->
     <div class="panel-body">
@@ -31,7 +41,7 @@
                     <td><b>Name</b></td>
                     <td><b>Phone Number</b></td>
                     <td><b>Email</b></td>
-                    <td><b>Roles</b></td>
+                    <td><b>Role</b></td>
                     <td><b>Options</b></td>
                 </tr>
             </thead>
@@ -49,9 +59,9 @@
                         </a> |
                         <a class='btn btn-warning' href="@Url.Action("Delete", "User", new { id = user.UserId })" style='width:50px;padding:4px 11px;font-size:10px;'>
                             Block
-                        </a>
+                        </a> |
                         <a class='btn btn-success' href="@Url.Action("Delete", "User", new { id = user.UserId })" style='width:50px;padding:4px 6px;font-size:10px;'>
-                            Login as 
+                            Login as
                         </a>
                     </td>
                 </tr>
@@ -63,3 +73,5 @@
         <p class="box-title"><b>Total Users till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">@Model.Count()</span></p>
     </div>
 </div>
+
+
