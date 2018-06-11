@@ -165,3 +165,16 @@ textarea {
     border-radius: 100px;
     margin-top:5px;
 }
+.adsTotal {
+    color: #999;
+    padding: 8px 10px 2px;
+}
+.txct{
+    text-align:center;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-top:20px;
+}
