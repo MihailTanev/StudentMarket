@@ -222,6 +222,9 @@
     <Content Include="Content\Images\admin.jpg" />
     <Content Include="Content\Images\banner1.jpg" />
     <Content Include="Content\Images\book-clutter-desk-73988.jpg" />
+    <Content Include="Content\Images\img1.jpg" />
+    <Content Include="Content\Images\img2.jpg" />
+    <Content Include="Content\Images\img3.jpg" />
     <Content Include="Content\Images\nav-icon.png" />
     <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
@@ -313,7 +316,7 @@
     <Content Include="Views\StudentProgram\Edit.cshtml" />
     <Content Include="Views\StudentProgram\Delete.cshtml" />
     <Content Include="Views\Users\ManageUsers.cshtml" />
-    <Content Include="Views\SearchProduct\Search.cshtml" />
+    <Content Include="Views\Shared\_ProductPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
