@@ -5,20 +5,20 @@ using StudentWebMarket.Web.Controllers;
 
 namespace StudentWebMarket.Test
 {
-    [TestClass]
-    public class ManagementControllerTest
-    {
-        [TestMethod]
-        public void Edit()
-        {
-            //Arrange
-            ManagementController cT = new ManagementController();
+    //[TestClass]
+    //public class ManagementControllerTest
+    //{
+    //    [TestMethod]
+    //    public void Edit()
+    //    {
+    //        //Arrange
+    //        ManagementController cT = new ManagementController();
 
-            //Act
-            ViewResult result = cT.EditCategory(1) as ViewResult;
+    //        //Act
+    //        ViewResult result = cT.EditCategory(1) as ViewResult;
 
-            //Assert
-            Assert.IsNotNull(result);
-        }
-    }
+    //        //Assert
+    //        Assert.IsNotNull(result);
+    //    }
+    //}
 }
