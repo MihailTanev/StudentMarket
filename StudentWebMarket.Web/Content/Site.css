@@ -258,3 +258,18 @@ span.step {
         font-family: Calibri;
     }
 }
+
+.thumbnail a > img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+}
+
+@media only screen and (max-width:684px){
+    .thumbnail a > img {
+        width: auto;
+        height: auto;
+        object-fit: cover;
+    }
+}
