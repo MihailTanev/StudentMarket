@@ -237,24 +237,22 @@ span.step {
     text-align: center;
 }
 
-/*@media only screen and (max-width:768px) {
-    .bv-thumbnail {
+/*@media only screen and (max-width:684px) {
+    /*.thumbnail dat {
         padding: 4px;
         margin-bottom: 20px;
         line-height: 1.42857143;
         background-color: #fff;
         border: 1px solid #ddd;
         border-radius: 4px;
-    }
+    }*/
 
-    .bv-thumbnail > img {
-        width: 80px;
-        height: 80px;
-        object-fit: contain;
+    /*.thumbnail dat > img {
+    
     }
 }*/
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:684px) {
     .txst {
         font-size: 12px;
         font-family: Calibri;
