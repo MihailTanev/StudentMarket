@@ -25,28 +25,28 @@
 </div>
 
 <div class="container-fluid">
-<div class="row">
-    <div class="page-header">
-        <h2 class="text-center">
-            Share Your Educational Expenses
-        </h2>
-    </div>
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-5">
-                <img src="~/Content/Images/book-clutter-desk-73988.jpg" class="img-responsive" />
-            </div>
-            <div>
-                <i style="font-size:16px;">
-                    At the end of the semester, there may be a few school items that you would like to keep and use again but there are also probably plenty that you would like to say goodbye to. Instead of going to the local store to sell them, there are many benefits that come with selling products online.<br><br /> Selling products online has become a faster and simpler
-                    process than before. You do not necessarily have to be the one to find and communicate with buyers. There are customers willing to give you cash for your used products online, and you do not even have to pay for the shipping. If you accept the quote for your items, you simply send in your product and receive the cash you need.<br><br /> It is not unusual to try to sell school items and get offered roughly 10 to 20 percent of what you originally paid. It can feel awful to be offered 100 kr for a product that cost you over 1000 kr. You can get around this school items buyback problem by going online,
-                    instead.
-                </i>
+    <div class="row">
+        <div class="page-header">
+            <h2 class="text-center">
+                Share Your Educational Expenses
+            </h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="~/Content/Images/book-clutter-desk-73988.jpg" class="img-responsive" />
+                </div>
+                <div>
+                    <i style="font-size:16px;">
+                        At the end of the semester, there may be a few school items that you would like to keep and use again but there are also probably plenty that you would like to say goodbye to. Instead of going to the local store to sell them, there are many benefits that come with selling products online.<br><br /> Selling products online has become a faster and simpler
+                        process than before. You do not necessarily have to be the one to find and communicate with buyers. There are customers willing to give you cash for your used products online, and you do not even have to pay for the shipping. If you accept the quote for your items, you simply send in your product and receive the cash you need.<br><br /> It is not unusual to try to sell school items and get offered roughly 10 to 20 percent of what you originally paid. It can feel awful to be offered 100 kr for a product that cost you over 1000 kr. You can get around this school items buyback problem by going online,
+                        instead.
+                    </i>
+                </div>
             </div>
         </div>
     </div>
 </div>
-    </div>
 
 <div class="row">
     <div class="page-header">
@@ -82,51 +82,51 @@
     </div>
 </div>
 
-    <div class="row" style="background-color:#a1d8ff">
-        <h1 class="text-center">
-            Sign up for Student Market today
-        </h1>
-        <p class="txst">From budgets and bills to free credit score and more, you’ll<br /> discover the effortless way to stay on top of it all.</p>
-        <div class="flex-container">
-            <div class="row">
-                <div>
-                    <a href="@Url.Action("Register","Account")" class="btn btn-default btn-lg" id="btnSign">Sign Up</a>
-                    <a href="@Url.Action("Login","Account")" class="btn btn-default btn-lg" id="btnSign">Log In</a>
-                </div>
-                &nbsp;
+<div class="row" style="background-color:#a1d8ff">
+    <h1 class="text-center">
+        Sign up for Student Market today
+    </h1>
+    <p class="txst">From budgets and bills to free credit score and more, you’ll<br /> discover the effortless way to stay on top of it all.</p>
+    <div class="flex-container">
+        <div class="row">
+            <div>
+                <a href="@Url.Action("Register","Account")" class="btn btn-default btn-lg" id="btnSign">Sign Up</a>
+                <a href="@Url.Action("Login","Account")" class="btn btn-default btn-lg" id="btnSign">Log In</a>
             </div>
+            &nbsp;
         </div>
     </div>
+</div>
 
-    <div class="row">
-        <div class="panel">
-            <div class="panel-heading">
-                <h3 class="page-header text-center">
-                    Recent Ads
-                </h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    @foreach (var product in Model.Take(6))
-                    {
-                        <div class="col-sm-4 col-md-4 col-md-4">
-                            <div class="thumbnail">
-                                @if (!product.ImageId.Equals(null))
-                                {
-                                    <img src="@Url.Action("Image", "Home", new { id = product.ImageId })" class="img-responsive" />
-                                }
-                                <div class="caption">
-                                    <h5 class="pull-right text-danger">@product.Price kr</h5>
-                                    <h4>
-                                        <a href="@Url.Action("ProductDetails","Product",new { product.Id})">@product.Product</a>
-                                    </h4>
-                                    <p>Created On : @product.CreatedOn.ToString("dd MMMM yyyy, HH:mm")</p>
-                                </div>
+<div class="row">
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="page-header text-center">
+                Recent Ads
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                @foreach (var product in Model.Take(6))
+                {
+                    <div class="col-sm-4 col-md-4 col-md-4">
+                        <div class="thumbnail">
+                            @if (!product.ImageId.Equals(null))
+                            {
+                                <img src="@Url.Action("Image", "Home", new { id = product.ImageId })" class="img-responsive" />
+                            }
+                            <div class="caption">
+                                <h5 class="pull-right text-danger">@product.Price kr</h5>
+                                <h4>
+                                    <a href="@Url.Action("ProductDetails","Product",new { product.Id})">@product.Product</a>
+                                </h4>
+                                <p>Created On : @product.CreatedOn.ToString("dd MMMM yyyy, HH:mm")</p>
                             </div>
-                            <br />
                         </div>
-                    }
-                </div>
+                        <br />
+                    </div>
+                }
             </div>
         </div>
     </div>
+</div>

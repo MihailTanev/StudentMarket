@@ -54,13 +54,13 @@
                     <td>@user.Email</td>
                     <td>@user.Role</td>
                     <td>
-                        <a class='btn btn-danger' href="@Url.Action("Delete", "User", new { id = user.UserId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                        <a class='btn btn-danger' href="@Url.Action("Delete", "Users", new { id = user.UserId })" style='width:50px;padding:4px 11px;font-size:10px;'>
                             Delete
                         </a> |
-                        <a class='btn btn-warning' href="@Url.Action("Delete", "User", new { id = user.UserId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                        <a class='btn btn-warning' href="@Url.Action("Delete", "Users", new { id = user.UserId })" style='width:50px;padding:4px 11px;font-size:10px;'>
                             Block
                         </a> |
-                        <a class='btn btn-success' href="@Url.Action("Delete", "User", new { id = user.UserId })" style='width:50px;padding:4px 6px;font-size:10px;'>
+                        <a class='btn btn-success' href="@Url.Action("Delete", "Users", new { id = user.UserId })" style='width:50px;padding:4px 6px;font-size:10px;'>
                             Login as
                         </a>
                     </td>

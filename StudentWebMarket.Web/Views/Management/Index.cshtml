@@ -8,7 +8,7 @@
         <h3 class="box-title">
             <b>Category</b>
         </h3>
-        <a href="@Url.Action("Create","Management")" style="margin-bottom:10px;" class="btn btn-primary"><i class="fa fa-plus"> Create new category</i></a>
+        <a href="@Url.Action("CreateCategory","Management")" style="margin-bottom:10px;" class="btn btn-primary"><i class="fa fa-plus"> Create new category</i></a>
     </div>
     <!-- /.box-header -->
     <div class="panel-body">
@@ -28,10 +28,10 @@
                         </a>
                     </td>
                     <td>
-                        <a class='btn btn-danger' href="@Url.Action("Edit", "Management", new { id = category.CategoryId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                        <a class='btn btn-danger' href="@Url.Action("EditCategory", "Management", new { id = category.CategoryId })" style='width:50px;padding:4px 11px;font-size:10px;'>
                             Edit
                         </a> |
-                        <a class='btn btn-warning' href="@Url.Action("Delete", "Management", new { id = category.CategoryId })" style='width:50px;padding:4px 11px;font-size:10px;'>
+                        <a class='btn btn-warning' href="@Url.Action("DeleteCategory", "Management", new { id = category.CategoryId })" style='width:50px;padding:4px 11px;font-size:10px;'>
                             Delete
                         </a>
                     </td>

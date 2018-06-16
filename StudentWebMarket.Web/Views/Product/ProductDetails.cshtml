@@ -11,7 +11,8 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-md-3">
-                <img width="200" height="250" src="@Url.Action("Image", "Home", new { id = Model.ImageId})" class="center-block img-responsive" />
+                <a target="_blank" href="@Url.Action("Image", "Home", new { id = Model.ImageId})">
+                    <img width="200" height="250" src="@Url.Action("Image", "Home", new { id = Model.ImageId})" class="center-block img-responsive" /></a>
             </div>
             <div class='col-md-5'>
                 <h4 class="">Details:</h4>
