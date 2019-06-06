@@ -6,7 +6,7 @@ ASP.NET MVC application for sharing educational expenses
 Online Demo (Azure Website)
 -------------
 
-http://studentwebmarket.azurewebsites.net
+http://studentmarket.azurewebsites.net
 
 
 Configuration
